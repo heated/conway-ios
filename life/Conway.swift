@@ -17,6 +17,7 @@ class Conway {
     var width  = 10
     var height = 10
     var cells: [Bool] = []
+    var nextGenerationCells: [Bool] = []
     var torus = true
     
     init(_ width: Int, _ height: Int) {
@@ -34,24 +35,28 @@ class Conway {
         return cells[cellPos(x, y)]
     }
     
+    func alive(pos: Int) -> Bool {
+        return cells[pos]
+    }
+    
     func set(_ x: Int, _ y: Int, alive: Bool) {
         cells[cellPos(x, y)] = alive
     }
     
     func nextGeneration() {
-        var newCells = emptyGrid()
-        
-        for x in 0..<width {
-            for y in 0..<height {
-                newCells[cellPos(x, y)] = cellLives(x, y)
-            }
+        for pos in 0 ..< cells.count {
+            nextGenerationCells[pos] = cellLives(pos)
         }
         
-        cells = newCells
+        swap(&cells, &nextGenerationCells)
+        
+//        cells = cells.enumerate().map {
     }
     
     
-    func neighborsOf(_ x: Int, _ y: Int) -> Int {
+    func neighborsOf(pos: Int) -> Int {
+        let x = pos / height
+        let y = pos % height
         var count = 0
         
         for dx in -1...1 {
@@ -81,10 +86,10 @@ class Conway {
         return a <= b && b <= c
     }
     
-    func cellLives(_ x: Int, _ y: Int) -> Bool {
-        let neighbors = neighborsOf(x, y)
+    func cellLives(pos: Int) -> Bool {
+        let neighbors = neighborsOf(pos)
         
-        return neighbors == 3 || (neighbors == 2 && alive(x, y))
+        return neighbors == 3 || (neighbors == 2 && alive(pos))
     }
     
     func emptyGrid() -> [Bool] {
@@ -93,6 +98,7 @@ class Conway {
     
     func initCells() {
         cells = emptyGrid()
+        nextGenerationCells = emptyGrid()
     }
     
     func randomizeCells() {

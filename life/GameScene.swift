@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-private let pixelSize = 20
+private let pixelSize = 10
 
 class GameScene: SKScene {
     var conway = Conway(10, 10)
@@ -54,13 +54,15 @@ class GameScene: SKScene {
    
     override func update(currentTime: CFTimeInterval) {
 //         Called before each frame is rendered 
-        conway.nextGeneration()
-        
-        for x in 0..<conway.width {
-            for y in 0..<conway.height {
-                updateCellView(x, y, alive: conway.alive(x, y))
-            }
+        for _ in 1...10 {
+            conway.nextGeneration()
         }
+        
+//        for x in 0..<conway.width {
+//            for y in 0..<conway.height {
+//                updateCellView(x, y, alive: conway.alive(x, y))
+//            }
+//        }
     }
     
     func updateCellView(x: Int, _ y: Int, alive: Bool) {
