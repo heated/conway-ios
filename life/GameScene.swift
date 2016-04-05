@@ -16,6 +16,10 @@ class GameScene: SKScene {
     var rects: [[SKSpriteNode]] = []
     
     override func didMoveToView(view: SKView) {
+        let horizontalCells = Int(self.size.width ) / pixelSize
+        let   verticalCells = Int(self.size.height) / pixelSize
+        conway = Conway(horizontalCells, verticalCells)
+        
         addCells()
     }
     
@@ -36,7 +40,7 @@ class GameScene: SKScene {
         shape.position = CGPoint(x: xCord, y: yCord)
         
         rects[x].append(shape)
-        updateCellView(x, y, alive: conway.cells[x][y])
+        updateCellView(x, y, alive: conway.alive(x, y))
         self.addChild(shape)
     }
     
@@ -54,7 +58,7 @@ class GameScene: SKScene {
         
         for x in 0..<conway.width {
             for y in 0..<conway.height {
-                updateCellView(x, y, alive: conway.cells[x][y])
+                updateCellView(x, y, alive: conway.alive(x, y))
             }
         }
     }
