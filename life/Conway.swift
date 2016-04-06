@@ -18,7 +18,7 @@ class Conway {
     var height = 10
     var cells: [Bool] = []
     var nextGenerationCells: [Bool] = []
-    var torus = true
+    var torus = false
     
     init(_ width: Int, _ height: Int) {
         self.width  = width
@@ -49,8 +49,6 @@ class Conway {
         }
         
         swap(&cells, &nextGenerationCells)
-        
-//        cells = cells.enumerate().map {
     }
     
     
@@ -61,29 +59,35 @@ class Conway {
         
         for dx in -1...1 {
             for dy in -1...1 {
-                var newX = x + dx
-                var newY = y + dy
-                
-                if torus {
-                    newX = (width  + newX) % width
-                    newY = (height + newY) % height
-                }
-                
-                if (dx != 0 || dy != 0) &&
-                    inOrder(0, newX, width - 1) &&
-                    inOrder(0, newY, height - 1) &&
-                    alive(newX, newY) {
+                if (dx != 0 || dy != 0) {
+                    
+                    var newX = x + dx
+                    var newY = y + dy
+                    
+                    if torus {
+                        newX = (width  + newX) % width
+                        newY = (height + newY) % height
+                        
+                        if alive(newX, newY) {
+                            count++
+                        }
+                        
+                    } else if validPos(newX, newY) &&
+                              alive(newX, newY) {
                         count++
+                    }
                 }
-                
             }
         }
         
         return count
     }
     
-    func inOrder(a: Int, _ b: Int, _ c: Int) -> Bool {
-        return a <= b && b <= c
+    func validPos(_ x: Int, _ y: Int) -> Bool {
+        return 0 <= x     &&
+               0 <= y     &&
+               x <  width &&
+               y <  height
     }
     
     func cellLives(pos: Int) -> Bool {
@@ -106,7 +110,7 @@ class Conway {
     }
     
     func setToGlider() {
-        emptyGrid()
+        initCells()
         set(0, 1, alive: true)
         set(1, 2, alive: true)
         set(2, 0, alive: true)

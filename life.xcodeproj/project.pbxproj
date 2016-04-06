@@ -17,6 +17,12 @@
 		2B2309171C9B3BEA0006E9C3 /* lifeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2309161C9B3BEA0006E9C3 /* lifeTests.swift */; };
 		2B2309221C9B3BEA0006E9C3 /* lifeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2309211C9B3BEA0006E9C3 /* lifeUITests.swift */; };
 		2B2309301C9B576F0006E9C3 /* Conway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B23092F1C9B576F0006E9C3 /* Conway.swift */; };
+		EBE2D5DA1CB47C2A001A40C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE2D5D91CB47C2A001A40C8 /* AppDelegate.swift */; };
+		EBE2D5DC1CB47C2A001A40C8 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE2D5DB1CB47C2A001A40C8 /* GameScene.swift */; };
+		EBE2D5DE1CB47C2A001A40C8 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = EBE2D5DD1CB47C2A001A40C8 /* GameScene.sks */; };
+		EBE2D5E01CB47C2A001A40C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBE2D5DF1CB47C2A001A40C8 /* Assets.xcassets */; };
+		EBE2D5E31CB47C2A001A40C8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBE2D5E11CB47C2A001A40C8 /* MainMenu.xib */; };
+		EBE2D5E81CB47C4A001A40C8 /* Conway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B23092F1C9B576F0006E9C3 /* Conway.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +59,13 @@
 		2B2309211C9B3BEA0006E9C3 /* lifeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lifeUITests.swift; sourceTree = "<group>"; };
 		2B2309231C9B3BEA0006E9C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B23092F1C9B576F0006E9C3 /* Conway.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conway.swift; sourceTree = "<group>"; };
+		EBE2D5D71CB47C2A001A40C8 /* lifeMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lifeMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBE2D5D91CB47C2A001A40C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EBE2D5DB1CB47C2A001A40C8 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		EBE2D5DD1CB47C2A001A40C8 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		EBE2D5DF1CB47C2A001A40C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EBE2D5E21CB47C2A001A40C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		EBE2D5E41CB47C2A001A40C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +90,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EBE2D5D41CB47C2A001A40C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -86,6 +106,7 @@
 				2B2308FC1C9B3BE90006E9C3 /* life */,
 				2B2309151C9B3BEA0006E9C3 /* lifeTests */,
 				2B2309201C9B3BEA0006E9C3 /* lifeUITests */,
+				EBE2D5D81CB47C2A001A40C8 /* lifeMac */,
 				2B2308FB1C9B3BE90006E9C3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,6 +117,7 @@
 				2B2308FA1C9B3BE90006E9C3 /* life.app */,
 				2B2309121C9B3BEA0006E9C3 /* lifeTests.xctest */,
 				2B23091D1C9B3BEA0006E9C3 /* lifeUITests.xctest */,
+				EBE2D5D71CB47C2A001A40C8 /* lifeMac.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -132,6 +154,19 @@
 				2B2309231C9B3BEA0006E9C3 /* Info.plist */,
 			);
 			path = lifeUITests;
+			sourceTree = "<group>";
+		};
+		EBE2D5D81CB47C2A001A40C8 /* lifeMac */ = {
+			isa = PBXGroup;
+			children = (
+				EBE2D5D91CB47C2A001A40C8 /* AppDelegate.swift */,
+				EBE2D5DB1CB47C2A001A40C8 /* GameScene.swift */,
+				EBE2D5DD1CB47C2A001A40C8 /* GameScene.sks */,
+				EBE2D5DF1CB47C2A001A40C8 /* Assets.xcassets */,
+				EBE2D5E11CB47C2A001A40C8 /* MainMenu.xib */,
+				EBE2D5E41CB47C2A001A40C8 /* Info.plist */,
+			);
+			path = lifeMac;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,13 +225,30 @@
 			productReference = 2B23091D1C9B3BEA0006E9C3 /* lifeUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		EBE2D5D61CB47C2A001A40C8 /* lifeMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBE2D5E71CB47C2A001A40C8 /* Build configuration list for PBXNativeTarget "lifeMac" */;
+			buildPhases = (
+				EBE2D5D31CB47C2A001A40C8 /* Sources */,
+				EBE2D5D41CB47C2A001A40C8 /* Frameworks */,
+				EBE2D5D51CB47C2A001A40C8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = lifeMac;
+			productName = lifeMac;
+			productReference = EBE2D5D71CB47C2A001A40C8 /* lifeMac.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		2B2308F21C9B3BE90006E9C3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Edward Swernofsky";
 				TargetAttributes = {
@@ -213,6 +265,9 @@
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = PFN47C5J84;
 						TestTargetID = 2B2308F91C9B3BE90006E9C3;
+					};
+					EBE2D5D61CB47C2A001A40C8 = {
+						CreatedOnToolsVersion = 7.3;
 					};
 				};
 			};
@@ -232,6 +287,7 @@
 				2B2308F91C9B3BE90006E9C3 /* life */,
 				2B2309111C9B3BEA0006E9C3 /* lifeTests */,
 				2B23091C1C9B3BEA0006E9C3 /* lifeUITests */,
+				EBE2D5D61CB47C2A001A40C8 /* lifeMac */,
 			);
 		};
 /* End PBXProject section */
@@ -259,6 +315,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBE2D5D51CB47C2A001A40C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBE2D5E01CB47C2A001A40C8 /* Assets.xcassets in Resources */,
+				EBE2D5DE1CB47C2A001A40C8 /* GameScene.sks in Resources */,
+				EBE2D5E31CB47C2A001A40C8 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +358,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EBE2D5D31CB47C2A001A40C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBE2D5DC1CB47C2A001A40C8 /* GameScene.swift in Sources */,
+				EBE2D5DA1CB47C2A001A40C8 /* AppDelegate.swift in Sources */,
+				EBE2D5E81CB47C4A001A40C8 /* Conway.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -322,6 +398,14 @@
 				2B23090B1C9B3BE90006E9C3 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		EBE2D5E11CB47C2A001A40C8 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EBE2D5E21CB47C2A001A40C8 /* Base */,
+			);
+			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -412,7 +496,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				GCC_OPTIMIZATION_LEVEL = 0;
+				CLANG_USE_OPTIMIZATION_PROFILE = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
 				INFOPLIST_FILE = life/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -426,11 +511,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_USE_OPTIMIZATION_PROFILE = NO;
 				INFOPLIST_FILE = life/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "the-internet.life";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
 		};
@@ -484,6 +571,38 @@
 			};
 			name = Release;
 		};
+		EBE2D5E51CB47C2A001A40C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = lifeMac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "the-internet.lifeMac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		EBE2D5E61CB47C2A001A40C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = lifeMac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "the-internet.lifeMac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -522,6 +641,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		EBE2D5E71CB47C2A001A40C8 /* Build configuration list for PBXNativeTarget "lifeMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBE2D5E51CB47C2A001A40C8 /* Debug */,
+				EBE2D5E61CB47C2A001A40C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
