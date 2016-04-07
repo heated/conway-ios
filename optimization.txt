@@ -1,0 +1,56 @@
+190 fps for 4
+32 x 48 cells
+1536 cells
+
+192 - 47
+300 - 17
+350 - 3.5
+
+removing shapes from scene...
+290 - 60
+330 - 16.5
+350 - 3.5
+
+with inOrder...
+210 - 2.1
+
+with same cell check...
+210 - 2.1
+
+with expanded inOrder...
+220 - 2.2
+
+with loop center removal optimization...
+240 - 2.4
+
+with torus if unrolling...
+350 - 3.5
+
+with no swift optimization...
+70 - .7
+
+with .enumerate().map
+320 - 3.2
+
+with swap
+370 - 3.7 ?!
+
+with no torus
+620 - 6.2 !
+
+952320 cps
+
+My Nexus 5X can reach about 5k fps in uber mode, which uses a separate process for conway.
+408 cells
+2.4k * 408 = 979200 cps
+
+Great, so they're basically the same speed.
+
+Swift (phone) -> 1e6
+Java (phone) -> 9.8e5
+C -> 6e7
+Go -> 1e7
+Swift (mac) -> 1.2e7
+
+That's as good as Go, a compiled language, and 6x slower than C, which is more in line with expectations.
+The most annoying thing about testing the mac build is the complete failure when I overshoot the capabilities of the computer.

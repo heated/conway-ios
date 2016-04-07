@@ -19,6 +19,8 @@ class Conway {
     var cells: [Bool] = []
     var nextGenerationCells: [Bool] = []
     var torus = false
+    var running = false
+    var generations = 0
     
     init(_ width: Int, _ height: Int) {
         self.width  = width
@@ -49,8 +51,20 @@ class Conway {
         }
         
         swap(&cells, &nextGenerationCells)
+        generations++
     }
     
+    func cellsPerSecond(testLength: Int = 100) -> Double {
+        let start = NSDate().timeIntervalSince1970
+        
+        for _ in 1...testLength {
+            nextGeneration()
+        }
+        
+        let end = NSDate().timeIntervalSince1970
+        
+        return Double(testLength * cells.count) / (end - start)
+    }
     
     func neighborsOf(pos: Int) -> Int {
         let x = pos / height
@@ -121,5 +135,15 @@ class Conway {
     func toggleTorus() -> Bool {
         torus = !torus
         return torus
+    }
+    
+    func run() {
+        if running {
+            nextGeneration()
+            
+            NSOperationQueue().addOperationWithBlock() {
+                self.run()
+            }
+        }
     }
 }

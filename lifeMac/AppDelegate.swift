@@ -29,6 +29,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             
             self.skView!.showsFPS = true
             self.skView!.showsNodeCount = true
+            self.skView!.showsDrawCount = true
+            self.skView!.showsQuadCount = true
         }
     }
     

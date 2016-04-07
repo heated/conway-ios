@@ -13,22 +13,28 @@ private let pixelSize = 10
 class GameScene: SKScene {
     var conway = Conway(10, 10)
     let cellSize = CGSize(width: pixelSize, height: pixelSize)
-    var rects: [[SKSpriteNode]] = []
+    var rects: [SKSpriteNode] = []
+    let white = SKColor.whiteColor()
+    let black = SKColor.blackColor()
     
     override func didMoveToView(view: SKView) {
-        let horizontalCells = Int(self.size.width ) / pixelSize
-        let   verticalCells = Int(self.size.height) / pixelSize
+        let horizontalCells = Int(size.width ) / pixelSize
+        let   verticalCells = Int(size.height) / pixelSize
         conway = Conway(horizontalCells, verticalCells)
         
         print(horizontalCells, verticalCells)
         
         addCells()
+        
+//        print(conway.cellsPerSecond())
+
+//        multithreading
+//        conway.running = true
+//        conway.run()
     }
     
     func addCells() {
         for i in 0..<conway.width {
-            rects.append([])
-            
             for j in 0..<conway.height {
                 addCell(i, j)
             }
@@ -36,13 +42,14 @@ class GameScene: SKScene {
     }
     
     func addCell(x: Int, _ y: Int) {
-        let shape = SKSpriteNode(color: SKColor.blackColor(), size: cellSize)
+        let shape = SKSpriteNode(color: black, size: cellSize)
+        
         let xCord = x * pixelSize + pixelSize / 2
         let yCord = y * pixelSize + pixelSize / 2
         shape.position = CGPoint(x: xCord, y: yCord)
+        //        shape.shouldRasterize = true
         
-        rects[x].append(shape)
-        updateCellView(x, y, alive: conway.alive(x, y))
+        rects.append(shape)
         self.addChild(shape)
     }
     
@@ -58,14 +65,8 @@ class GameScene: SKScene {
 //         Called before each frame is rendered 
         conway.nextGeneration()
         
-        for x in 0..<conway.width {
-            for y in 0..<conway.height {
-                updateCellView(x, y, alive: conway.alive(x, y))
-            }
+        for pos in 0 ..< self.conway.cells.count {
+            rects[pos].color = conway.alive(pos) ? white : black
         }
-    }
-    
-    func updateCellView(x: Int, _ y: Int, alive: Bool) {
-        rects[x][y].color = alive ? SKColor.whiteColor() : SKColor.blackColor()
     }
 }
